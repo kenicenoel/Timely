@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <!--<color name=""-->
+    <color name="black">#066acd</color>
+    <color name="statusBarColor">#177bd8</color>
+    <color name="primaryTextColor">#212121</color>
+    <color name="secondaryTextColor">#727272</color>
+    <color name="dividerTextColor">#B6B6B6</color>
+
+    <color name="materialLight">#f5b800</color>
+    <color name="softGreen">#009688</color>
+    <color name="softGreenLight">#35A79C</color>
+    <color name="purpleBerry">#3F5CB3</color>
+    <color name="white">#ffffff</color>
+    <color name="materialYellow">#FFD54F</color>
+    <color name="heartyRed">#E74F3F</color>
+    <color name="silverFox">#bdc3c7</color>
+    <color name="clouds">#ecf0f1</color>
+
+    <color name="grey">#666666</color>
+    <color name="greyv2">#888888</color>
+    <color name="list_divider">#d9d9d9</color>
+    <color name="list_row_start_color">#ffffff</color>
+    <color name="list_row_end_color">#ffffff</color>
+    <color name="list_row_hover_start_color">#ebeef0</color>
+    <color name="list_row_hover_end_color">#ebeef0</color>
+</resources>
