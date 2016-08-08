@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_mainmenuFragment"
+            android:icon="@drawable/ic_home"
+
+            android:title="Home" />
+        <item
+            android:id="@+id/monday"
+            android:icon="@drawable/ic_android_calendar"
+            android:title="@string/monday" />
+
+        <item
+            android:id="@+id/tuesday"
+            android:icon="@drawable/ic_android_calendar"
+            android:title="@string/tuesday" />
+
+        <item
+            android:id="@+id/wednesday"
+            android:icon="@drawable/ic_android_calendar"
+            android:title="@string/wednesday" />
+
+        <item
+            android:id="@+id/thursday"
+            android:icon="@drawable/ic_android_calendar"
+            android:title="@string/thursday" />
+
+        <item
+            android:id="@+id/friday"
+            android:icon="@drawable/ic_android_calendar"
+            android:title="@string/friday" />
+
+        <item
+            android:id="@+id/saturday"
+            android:icon="@drawable/ic_android_calendar"
+            android:title="@string/saturday" />
+
+        <item
+            android:id="@+id/sunday"
+            android:icon="@drawable/ic_android_calendar"
+            android:title="@string/sunday" />
+
+        <item
+            android:id="@+id/nav_Logout"
+            android:icon="@drawable/ic_android_calendar"
+            android:title="Sign out" />
+
+
+
+    </group>
+
+
+</menu>

@@ -1,0 +1,46 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/snow"
+    tools:context=".MainMenuFragment"
+    android:padding="16dp">
+
+
+
+    <ImageView
+        android:id="@+id/addCalendar"
+        android:layout_width="192dp"
+        android:layout_height="192dp"
+        android:src="@drawable/ic_calendar"
+        android:layout_margin="84dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/informationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="We could not find any timetables. "
+        android:fontFamily="sans-serif-thin"
+        android:textSize="18sp"
+        android:layout_below="@id/addCalendar"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorAccent"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/informationText"
+        android:background="@drawable/circular"
+        android:text="@string/addTimetable"
+        android:textColor="@color/white"
+        android:textSize="@dimen/button_textSize"
+        android:textAllCaps="false"
+        android:fontFamily="sans-serif-thin"
+        android:layout_margin="24dp"
+        android:padding="@dimen/button_padding"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
+

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <!--<color name=""-->
-    <color name="black">#066acd</color>
+    <color name="colorPrimary">#06d6a0</color>
+    <color name="colorPrimaryDark">#00a896</color>
+    <color name="colorAccent">#05668d</color>
+    <color name="infraRed">#ef476f</color>
+    <color name="snow">#fffcf9</color>
+
+
+    <color name="black">#000000</color>
     <color name="statusBarColor">#177bd8</color>
     <color name="primaryTextColor">#212121</color>
     <color name="secondaryTextColor">#727272</color>
@@ -20,11 +23,4 @@
     <color name="silverFox">#bdc3c7</color>
     <color name="clouds">#ecf0f1</color>
 
-    <color name="grey">#666666</color>
-    <color name="greyv2">#888888</color>
-    <color name="list_divider">#d9d9d9</color>
-    <color name="list_row_start_color">#ffffff</color>
-    <color name="list_row_end_color">#ffffff</color>
-    <color name="list_row_hover_start_color">#ebeef0</color>
-    <color name="list_row_hover_end_color">#ebeef0</color>
 </resources>
