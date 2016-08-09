@@ -11,6 +11,24 @@
     app:titleTextColor="@color/white"
     local:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:padding="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/calculator"
+           android:layout_alignParentRight="true"
+
+            />
+
+    </RelativeLayout>
+
+
 
 
 </android.support.v7.widget.Toolbar>

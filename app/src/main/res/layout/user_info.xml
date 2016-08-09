@@ -17,7 +17,7 @@
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:padding="5dp"
-        android:background="@drawable/circle"
+
         android:textColorHint="@color/white" />
 
     <TextView

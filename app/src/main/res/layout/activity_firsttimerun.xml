@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/softGreen"
+    tools:context="kenice.com.timely.FirstTimeRun">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/greeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome to timely"
+            android:fontFamily="sans-serif-regular"
+            android:textSize="18sp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:id="@+id/awardImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/greeting"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/award"/>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/awardImage"
+            android:padding="20dp"
+            android:layout_centerInParent="true"
+            android:textColor="@color/snow"
+            android:text="Timely is your personal way to keep track of your school life. It helps you manage your courses, exams and much more."/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="what's your name again?"
+            android:layout_below="@id/description"
+            android:layout_centerHorizontal="true"
+            android:textColorHint="@color/snow"
+            android:textColor="@color/white"
+            />
+
+    </RelativeLayout>
+
+
+
+
+
+    <Button
+        android:id="@+id/saveTimeTable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:text="Start"
+        android:textColor="@color/white"
+        android:textSize="@dimen/button_textSize"
+        android:textAllCaps="false"
+        android:fontFamily="sans-serif-light"
+        android:layout_margin="24dp"
+        android:padding="@dimen/button_padding"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

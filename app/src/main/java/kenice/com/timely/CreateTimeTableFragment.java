@@ -1,6 +1,7 @@
 package kenice.com.timely;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,9 +9,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 
-public class MainMenuFragment extends Fragment implements View.OnClickListener
+public class CreateTimeTableFragment extends Fragment implements View.OnClickListener
 {
-    Button addTimeTable;
+    Button saveTimetable;
     View view;
 
     @Override
@@ -25,22 +26,23 @@ public class MainMenuFragment extends Fragment implements View.OnClickListener
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         // Inflate the layout for this fragment
-        view =  inflater.inflate(R.layout.fragment_mainmenu, container, false);
+        view =  inflater.inflate(R.layout.fragment_createtimetable, container, false);
         return view;
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState)
     {
+
         super.onActivityCreated(savedInstanceState);
-        addTimeTable = (Button) view.findViewById(R.id.addTimeTableButton);
+        saveTimetable = (Button) view.findViewById(R.id.saveTimeTable);
     }
 
     @Override
     public void onStart()
     {
         super.onStart();
-        addTimeTable.setOnClickListener(this);
+        saveTimetable.setOnClickListener(this);
 
 
     }
@@ -49,7 +51,8 @@ public class MainMenuFragment extends Fragment implements View.OnClickListener
     @Override
     public void onClick(View v)
     {
-        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentHolder, new CreateTimeTableFragment(), "CreateTimeTableFragment")
-                .addToBackStack(null).commit();
+        Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content), "You clicked a button!", Snackbar.LENGTH_LONG);
+        snackbar.show();
+
     }
 }
