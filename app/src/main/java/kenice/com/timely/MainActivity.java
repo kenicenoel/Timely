@@ -1,5 +1,6 @@
 package kenice.com.timely;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -16,14 +17,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import kenice.com.timely.Extras.SettingsBuddy;
+
 public class MainActivity extends AppCompatActivity
 {
     private static final String TAG = "MainMenuFragment";
     private Toolbar toolbar;
-    private DrawerLayout mDrawer;
+    private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
     private TextView drawer;
     private TextView upcomingExams;
+    private View headerView;
+    private NavigationView navigationView;
+    private boolean firstTimeRun;
+    private SettingsBuddy buddy;
+    private String DEFAULT = "N/A";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -34,38 +43,48 @@ public class MainActivity extends AppCompatActivity
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setTitle("Timely");
+        buddy= new SettingsBuddy(this);
+        firstTimeRun = buddy.isFirstTimeRun();
+        if (firstTimeRun)
+        {
+            Intent intent = new Intent(getApplicationContext(), FirstTimeRun.class);
+            startActivity(intent);
 
-        String user = "Kenice Noel";
+        }
+
+        FragmentManager fm = getSupportFragmentManager();
+
+        String user = buddy.getFullName();
 
         //Set Drawer Header
-        NavigationView navigationView = (NavigationView) findViewById(R.id.navView);
-        setupDrawerContent(navigationView);
-        View headerView = LayoutInflater.from(this).inflate(R.layout.user_info, navigationView, false);
-        navigationView.addHeaderView(headerView);
-
+        navigationView = (NavigationView) findViewById(R.id.navView);
         // Find our drawer view
-        mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        setupDrawerContent(navigationView);
+        headerView = LayoutInflater.from(this).inflate(R.layout.user_info, navigationView, false);
+        navigationView.addHeaderView(headerView);
+        drawer = (TextView) headerView.findViewById(R.id.currentUser);
+        upcomingExams = (TextView) headerView.findViewById(R.id.numberOfExams);
+
+
         drawerToggle = setupDrawerToggle();
 
         // Tie DrawerLayout events to the ActionBarToggle
-        mDrawer.addDrawerListener(drawerToggle);
+        drawerLayout.addDrawerListener(drawerToggle);
 
-        // Get the name and route TextView from the Header View
-        drawer = (TextView) headerView.findViewById(R.id.currentUser);
-        upcomingExams = (TextView) headerView.findViewById(R.id.numberOfExams);
         drawer.setText(user);
 
         MainMenuFragment fragment = new MainMenuFragment();
-        FragmentManager fm = getSupportFragmentManager();
 
-        fm.beginTransaction().add(R.id.framentHolder, fragment, "Main").commit();
+
+        fm.beginTransaction().add(R.id.fragmentHolder, fragment, "MainMenuFragment").commit();
 
 
     }
 
     private ActionBarDrawerToggle setupDrawerToggle()
     {
-        return new ActionBarDrawerToggle(this, mDrawer, toolbar, R.string.openDrawer, R.string.closeDrawer);
+        return new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.openDrawer, R.string.closeDrawer);
     }
 
 
@@ -99,6 +118,7 @@ public class MainActivity extends AppCompatActivity
     public void onConfigurationChanged(Configuration newConfig)
     {
         super.onConfigurationChanged(newConfig);
+
         // Pass any configuration change to the drawer toggles
         drawerToggle.onConfigurationChanged(newConfig);
     }
@@ -146,7 +166,7 @@ public class MainActivity extends AppCompatActivity
             {
                 MainMenuFragment mainMenuFragment = new MainMenuFragment();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.add(R.id.framentHolder, mainMenuFragment, "MainMenuFragment");
+                fragmentTransaction.add(R.id.fragmentHolder, mainMenuFragment, "MainMenuFragment");
                 fragmentTransaction.commit();
 
             }
@@ -222,6 +242,6 @@ public class MainActivity extends AppCompatActivity
             e.printStackTrace();
         }
 
-        mDrawer.closeDrawers();
+        drawerLayout.closeDrawers();
     }
 }

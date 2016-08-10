@@ -16,7 +16,7 @@
         android:fontFamily="sans-serif-thin"
         android:textSize="18sp"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/colorAccent"/>
+        />
 
     <Button
         android:id="@+id/saveTimeTable"

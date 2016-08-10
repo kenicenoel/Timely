@@ -7,10 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import kenice.com.timely.Extras.SettingsBuddy;
+
 
 public class MainMenuFragment extends Fragment implements View.OnClickListener
 {
     Button addTimeTable;
+    SettingsBuddy buddy;
     View view;
 
     @Override
@@ -34,13 +37,18 @@ public class MainMenuFragment extends Fragment implements View.OnClickListener
     {
         super.onActivityCreated(savedInstanceState);
         addTimeTable = (Button) view.findViewById(R.id.addTimeTableButton);
+        buddy = new SettingsBuddy(getContext());
     }
 
     @Override
     public void onStart()
     {
         super.onStart();
-        addTimeTable.setOnClickListener(this);
+        if (!buddy.doesATimeTableExist())
+        {
+            addTimeTable.setOnClickListener(this);
+        }
+
 
 
     }

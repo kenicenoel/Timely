@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/softGreen"
+    android:background="@color/infraRed"
     tools:context="kenice.com.timely.FirstTimeRun">
 
     <RelativeLayout
@@ -15,57 +15,146 @@
             android:id="@+id/greeting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Welcome to timely"
-            android:fontFamily="sans-serif-regular"
+            android:text="Well, hello there!"
+            android:fontFamily="sans-serif-light"
             android:textSize="18sp"
             android:layout_centerHorizontal="true"
             android:textColor="@color/white"/>
 
-        <ImageView
-            android:id="@+id/awardImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+
+        <LinearLayout
+            android:id="@+id/featureIcons"
+            android:layout_width="match_parent"
+            android:padding="20dp"
             android:layout_below="@id/greeting"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/award"/>
+            android:weightSum="4"
+            android:orientation="horizontal"
+            android:layout_marginTop="50dp"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/trackCourses"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Manage your courses"
+                android:textSize="12sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/white"
+                android:drawableTop="@drawable/courses"/>
+
+            <TextView
+                android:id="@+id/getAlerts"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Get alerts for classes"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_toRightOf="@id/trackCourses"
+                android:textColor="@color/white"
+                android:drawableTop="@drawable/alert"/>
+
+            <TextView
+                android:id="@+id/monitorExams"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/getAlerts"
+                android:text="Track your exams"
+                android:textSize="12sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:drawableTop="@drawable/exam"/>
+
+            <TextView
+                android:id="@+id/calculateGPA"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/monitorExams"
+                android:text="Calculate your GPA"
+                android:textSize="12sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-light"
+                android:drawableTop="@drawable/percentage"/>
+
+        </LinearLayout>
+
+
 
         <TextView
             android:id="@+id/description"
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/awardImage"
+            android:layout_below="@id/featureIcons"
+            android:layout_marginBottom="50dp"
             android:padding="20dp"
             android:layout_centerInParent="true"
-            android:textColor="@color/snow"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-light"
             android:text="Timely is your personal way to keep track of your school life. It helps you manage your courses, exams and much more."/>
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="what's your name again?"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_below="@id/description"
-            android:layout_centerHorizontal="true"
-            android:textColorHint="@color/snow"
-            android:textColor="@color/white"
-            />
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/getNameLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What should we call you?"
+                android:gravity="left"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+
+                android:layout_above="@+id/nameOfUser"
+                />
+
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@id/nameOfUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="enter your name"
+                android:layout_below="@id/description"
+                android:layout_centerHorizontal="true"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-light"
+                />
+
+
+        </LinearLayout>
 
     </RelativeLayout>
 
-
-
-
-
     <Button
-        android:id="@+id/saveTimeTable"
+        android:id="@+id/saveName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        android:text="Start"
+        android:text="Go"
         android:textColor="@color/white"
         android:textSize="@dimen/button_textSize"
         android:textAllCaps="false"
-        android:fontFamily="sans-serif-light"
+        android:fontFamily="sans-serif-regular"
         android:layout_margin="24dp"
         android:padding="@dimen/button_padding"
         android:layout_alignParentRight="true"

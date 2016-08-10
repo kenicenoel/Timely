@@ -1,40 +1,36 @@
-<android.support.v4.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <!-- The ActionBar displayed at the top -->
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar"  />
-
-
-    <FrameLayout
-        android:id="@+id/framentHolder"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/toolbar">
-    </FrameLayout>
+        android:layout_height="match_parent">
 
-</RelativeLayout>
+        <!-- The ActionBar displayed at the top -->
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+
+        <FrameLayout
+            android:id="@+id/fragmentHolder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar">
+        </FrameLayout>
+
+    </RelativeLayout>
 
     <!-- The navigation drawer that comes from the left -->
     <!-- Note that `android:layout_gravity` needs to be set to 'start' -->
-<android.support.design.widget.NavigationView
-android:id="@+id/navView"
-android:layout_width="320dp"
-android:layout_height="match_parent"
-android:layout_gravity="start"
-app:menu="@menu/drawer_view">
-</android.support.design.widget.NavigationView>
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navView"
+        android:layout_width="320dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/drawer_view">
+    </android.support.design.widget.NavigationView>
 
-    </android.support.v4.widget.DrawerLayout>
-
+</android.support.v4.widget.DrawerLayout>
