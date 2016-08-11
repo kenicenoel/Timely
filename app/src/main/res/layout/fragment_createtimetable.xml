@@ -16,19 +16,161 @@
         android:fontFamily="sans-serif-thin"
         android:textSize="18sp"
         android:layout_centerHorizontal="true"
+
         />
+    
+    <LinearLayout
+        android:id="@+id/courseEntryLayout"
+        android:layout_width="match_parent"
+        android:layout_below="@id/informationText"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/courseNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Course name"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <EditText
+            android:id="@+id/courseNameEntry"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="e.g Intro to Programming"
+            android:layout_marginBottom="10dp"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/courseCodeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Course Code"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <EditText
+            android:id="@+id/courseCodeEntry"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="e.g INFO 1400"
+            android:layout_marginBottom="10dp"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/courseLecturerLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lecturer"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <EditText
+            android:id="@+id/courseLecturerEntry"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="e.g Bob Frank"
+            android:layout_marginBottom="10dp"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/classRoomNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Room"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <EditText
+            android:id="@+id/classRoomEntry"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="e.g Lab 2"
+            android:layout_marginBottom="10dp"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/selectDaysLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose day and time"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <LinearLayout
+            android:id="@+id/selectedDaysAndTimes"
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Spinner
+                android:id="@+id/courseDaysSelecter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="e.g INFO 1400"
+                android:padding="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="13sp"/>
+
+            <TextView
+                android:id="@+id/courseTimeSelector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose time"
+                android:textColor="@color/heartyRed">
+
+
+            </TextView>
+
+            <ImageView
+                android:id="@+id/addNewDayTimeIcon"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add_black_24dp"
+                android:layout_gravity="end"
+                />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/saveAndContinueAdding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:text="New course"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/button_textSize"
+        android:textAllCaps="false"
+        android:fontFamily="sans-serif-regular"
+        android:padding="@dimen/button_padding"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"/>
 
     <Button
         android:id="@+id/saveTimeTable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:background="@android:color/transparent"
         android:text="Finish"
-        android:textColor="@color/white"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="@dimen/button_textSize"
         android:textAllCaps="false"
-        android:fontFamily="sans-serif-thin"
-        android:layout_margin="24dp"
+        android:fontFamily="sans-serif-regular"
         android:padding="@dimen/button_padding"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"/>

@@ -31,7 +31,6 @@ public class FirstTimeRun extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-
                 String fullName = user.getText().toString();
                 if (fullName.length() < 2)
                 {
@@ -52,7 +51,6 @@ public class FirstTimeRun extends AppCompatActivity
 
             }
         });
-
 
 
     }

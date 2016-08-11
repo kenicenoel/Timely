@@ -14,7 +14,7 @@ public class SettingsBuddy
     private SharedPreferences settings;
     private SharedPreferences.Editor editor;
     private String DEFAULT = "N/A"; // A default constant for use with sharedPreferences
-    private boolean TIMETABLE_CREATED_CHECK = false;
+    private boolean BOOL_FALSE = false;
 
 
     public SettingsBuddy(Context context)
@@ -51,6 +51,24 @@ public class SettingsBuddy
         editor.commit();
     }
 
+    public void setTimetableCreated(boolean value)
+    {
+        this.editor = settings.edit();
+        editor.putBoolean("timetableCreated", value);
+        editor.commit();
+    }
+
+    public boolean getTimeTableCreated()
+    {
+        boolean created = settings.getBoolean("timetableCreated", BOOL_FALSE);
+        if (created == BOOL_FALSE)
+        {
+            return false;
+        }
+        return true;
+    }
+
+
 
     // Checks if this is the first time the app is running
     public boolean isFirstTimeRun()
@@ -64,16 +82,6 @@ public class SettingsBuddy
 
     }
 
-    public boolean doesATimeTableExist()
-    {
-        String created = settings.getString("timetableCreated", DEFAULT);
-        if (created.equals(TIMETABLE_CREATED_CHECK))
-        {
-            return false;
-        }
-
-        return true;
-    }
 
 
 }

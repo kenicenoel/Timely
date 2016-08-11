@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 
 import kenice.com.timely.Extras.SettingsBuddy;
 
@@ -14,6 +15,8 @@ public class MainMenuFragment extends Fragment implements View.OnClickListener
 {
     Button addTimeTable;
     SettingsBuddy buddy;
+    RelativeLayout noTimetables;
+    boolean isTimeTableCreated;
     View view;
 
     @Override
@@ -38,15 +41,23 @@ public class MainMenuFragment extends Fragment implements View.OnClickListener
         super.onActivityCreated(savedInstanceState);
         addTimeTable = (Button) view.findViewById(R.id.addTimeTableButton);
         buddy = new SettingsBuddy(getContext());
+        isTimeTableCreated = buddy.getTimeTableCreated();
+        noTimetables = (RelativeLayout) view.findViewById(R.id.noTimeTablesView);
     }
 
     @Override
     public void onStart()
     {
         super.onStart();
-        if (!buddy.doesATimeTableExist())
+        if (!isTimeTableCreated)
         {
+            noTimetables.setVisibility(View.VISIBLE);
             addTimeTable.setOnClickListener(this);
+        }
+
+        else
+        {
+            noTimetables.setVisibility(View.GONE);
         }
 
 
