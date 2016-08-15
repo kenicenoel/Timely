@@ -16,17 +16,23 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import kenice.com.timely.Adaptors.DatabaseAdaptor;
+
 
 public class CreateTimeTableFragment extends Fragment implements View.OnClickListener
 {
     Button saveTimetable;
-    View view;
+    private View view;
     private Spinner daySpinner;
     TextView timePicker;
     ArrayList<String> dateTimeValues;
     ImageView addNewDayTime;
     TextView selectDaysLabel;
     LinearLayout selectedDaysAndTime;
+    DatabaseAdaptor helper;
+
+    private Button addNewCourse;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -41,6 +47,7 @@ public class CreateTimeTableFragment extends Fragment implements View.OnClickLis
     {
         // Inflate the layout for this fragment
         view =  inflater.inflate(R.layout.fragment_createtimetable, container, false);
+        helper = new DatabaseAdaptor(getContext());
         return view;
     }
 
@@ -49,6 +56,8 @@ public class CreateTimeTableFragment extends Fragment implements View.OnClickLis
     {
 
         super.onActivityCreated(savedInstanceState);
+
+        addNewCourse = (Button) view.findViewById(R.id.saveAndContinueAdding);
         selectDaysLabel = (TextView) view.findViewById(R.id.selectDaysLabel);
         saveTimetable = (Button) view.findViewById(R.id.saveTimeTable);
         addNewDayTime = (ImageView) view.findViewById(R.id.addNewDayTimeIcon);
@@ -92,6 +101,15 @@ public class CreateTimeTableFragment extends Fragment implements View.OnClickLis
 
         // Apply the adapter to the spinner
         daySpinner.setAdapter(adapter);
+
+        addNewCourse.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+
+            }
+        });
     }
 
     @Override

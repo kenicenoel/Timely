@@ -25,7 +25,7 @@
         android:layout_below="@id/informationText"
         android:layout_marginTop="40dp"
         android:orientation="vertical"
-        android:gravity="center"
+
         android:layout_height="wrap_content">
 
         <TextView

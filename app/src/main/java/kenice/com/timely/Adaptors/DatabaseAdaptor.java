@@ -1,5 +1,6 @@
 package kenice.com.timely.Adaptors;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -36,26 +37,26 @@ public class DatabaseAdaptor
 //
 //    }
 //
-//    public long insertPackageData(String packageNumber, String trackingNumber, String supplier, String packageDescription, double totalWeight, String shipper, double packagevalue, int accountNumber, String notes, String packageStatus, String internalStatus)
-//    {
-//        SQLiteDatabase db = helper.getWritableDatabase();
-//        ContentValues contentValues = new ContentValues();
-//        contentValues.put(DatabaseHelper.COLUMN_PACKAGENUMBER, packageNumber);
-//        contentValues.put(DatabaseHelper.COLUMN_INTERNATIONALTRACKINGNUMBER, trackingNumber);
-//        contentValues.put(DatabaseHelper.COLUMN_SUPPLIER, supplier);
-//        contentValues.put(DatabaseHelper.COLUMN_PACKAGEDESCRIPTION, packageDescription);
-//        contentValues.put(DatabaseHelper.COLUMN_TOTALWEIGHT, totalWeight);
-//        contentValues.put(DatabaseHelper.COLUMN_SHIPPER, shipper);
-//        contentValues.put(DatabaseHelper.COLUMN_PACKAGEVALUE, packagevalue);
-//        contentValues.put(DatabaseHelper.COLUMN_ACCOUNTNUMBER, accountNumber);
-//        contentValues.put(DatabaseHelper.COLUMN_NOTES, notes);
-//        contentValues.put(DatabaseHelper.COLUMN_PACKAGESTATUS, packageStatus);
-//        contentValues.put(DatabaseHelper.COLUMN_INTERNALSTATUS, internalStatus);
-//
-//       long id =  db.insert(DatabaseHelper.TABLE_NAME_PACKAGE, null, contentValues);
-//
-//        return id;
-//    }
+    public long insert(String packageNumber, String trackingNumber, String supplier, String packageDescription, double totalWeight, String shipper, double packagevalue, int accountNumber, String notes, String packageStatus, String internalStatus)
+    {
+        SQLiteDatabase db = helper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(DatabaseHelper.COLUMN_PACKAGENUMBER, packageNumber);
+        contentValues.put(DatabaseHelper.COLUMN_INTERNATIONALTRACKINGNUMBER, trackingNumber);
+        contentValues.put(DatabaseHelper.COLUMN_SUPPLIER, supplier);
+        contentValues.put(DatabaseHelper.COLUMN_PACKAGEDESCRIPTION, packageDescription);
+        contentValues.put(DatabaseHelper.COLUMN_TOTALWEIGHT, totalWeight);
+        contentValues.put(DatabaseHelper.COLUMN_SHIPPER, shipper);
+        contentValues.put(DatabaseHelper.COLUMN_PACKAGEVALUE, packagevalue);
+        contentValues.put(DatabaseHelper.COLUMN_ACCOUNTNUMBER, accountNumber);
+        contentValues.put(DatabaseHelper.COLUMN_NOTES, notes);
+        contentValues.put(DatabaseHelper.COLUMN_PACKAGESTATUS, packageStatus);
+        contentValues.put(DatabaseHelper.COLUMN_INTERNALSTATUS, internalStatus);
+
+       long id =  db.insert(DatabaseHelper.TABLE_NAME_PACKAGE, null, contentValues);
+
+        return id;
+    }
 //
 //
 //
